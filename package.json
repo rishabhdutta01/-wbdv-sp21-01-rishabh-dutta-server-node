@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rishabhdutta01/wbdv-sp21-01-rishabh-dutta-server-node/issues"
   },
-  "homepage": "https://github.com/rishabhdutta01/wbdv-sp21-01-rishabh-dutta-server-node#readme"
+  "homepage": "https://github.com/rishabhdutta01/wbdv-sp21-01-rishabh-dutta-server-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
