@@ -5,10 +5,10 @@ const cors = require("cors")
 app.use(cors())
 
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb+srv://webdev:webdev@whiteboardwebdev.yhvle.mongodb.net/webdevdb?retryWrites=true&w=majority',
-//     {useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect('mongodb://localhost:27017/whiteboard',
+mongoose.connect('mongodb+srv://webdev:webdev@whiteboardwebdev.yhvle.mongodb.net/webdevdb?retryWrites=true&w=majority',
     {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://localhost:27017/whiteboard',
+//     {useNewUrlParser: true, useUnifiedTopology: true});
 
 // configure CORS
 // app.use(function (req, res, next) {
@@ -27,4 +27,7 @@ require('./controllers/quizzes-controller')(app)
 require('./controllers/questions-controller')(app)
 require('./controllers/quiz-attempts-controller')(app)
 
-app.listen(3001)
+const port = process.env.PORT || 3001
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
